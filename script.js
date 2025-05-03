@@ -18,7 +18,7 @@ const categories = [
   "Awkward things done with socks", "Erotic euphemisms for butt stuff",
   "Bizarre places to be walked in on", "What not to say during foreplay",
   "Unusual turn-ons", "Things you'd never explain to kids", "Dirty dares gone wrong",
-  "Sexy things said too loudly", "Embarrassing Google searches", "Things that vibrate (not phones)"
+  "Sexy things said too loudly", "Embarrassing Google searches", "Things that vibrate (not phones)", "Things that push Landen's buttons", "People Bryce has called a good boy", "Names of Chris's ex-girlfriends", "Pieces of technology Nathan has fixed", "Names of people Bryson has fat shamed", "Good boy activities", "Ways Parker has touched Quinlan", "Fruits that the cornucopia has"
 ];
 
 let currentTimer = null;
