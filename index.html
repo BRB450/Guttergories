@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guttergories</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rubik+Dirt&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
   <button class="mode-toggle" onclick="toggleMode()">🌙 Toggle After Dark</button>
+
   <h1>Guttergories</h1>
-  <p class="tagline">Like Cards Against Humanity and Scattergories didn't use protection... 🍆💦</p>
+  <p class="tagline">Like Cards Against Humanity and Scattergories didn’t use protection... 🍆💦</p>
+
+  <div class="letter-box" id="letter">?</div>
 
   <div class="controls">
     <label>Categories:
@@ -25,27 +28,30 @@
     <button onclick="rerollCategories()">Reroll Categories</button>
   </div>
 
-  <div class="letter-box" id="letter">?</div>
   <div class="timer">⏱️ Time Left: <span id="timer">0</span>s</div>
   <ul id="categoryList"></ul>
 
-  <details class="rules">
-    <summary>📜 View Guttergories Rules</summary>
+ <details class="rules">
+  <summary>📜 View Guttergories Rules</summary>
+  <div class="rules-content">
+    <p><strong>The Letter:</strong> A random letter is selected at the start of each round. All answers must begin with that letter. Ignore "A", "An", or "The" at the start.</p>
+    <p><strong>The Categories:</strong> You’ll get a list of funny and dirty prompts. Write an answer for each that starts with the round’s letter.</p>
+    <p><strong>The Timer:</strong> You must finish before time runs out. No edits afterward!</p>
+    <p><strong>Scoring (manual):</strong></p>
     <ul>
-      <li><strong>The Letter:</strong> A random letter is chosen each round. All answers must begin with that letter.</li>
-      <li><strong>The Categories:</strong> Everyone uses the same list. One answer per category.</li>
-      <li><strong>The Timer:</strong> You must finish before the timer ends. No changing answers after.</li>
-      <li><strong>Scoring (manual):</strong>
-        <ul>
-          <li>🟢 Unique answer: <strong>10 points</strong></li>
-          <li>🟡 Matching answer: <strong>5 points</strong></li>
-          <li>🔴 Blank answer: <strong>0 points</strong></li>
-          <li>🌟 Alliteration bonus: <strong>+1 per repeating letter (max 3)</strong></li>
-        </ul>
-      </li>
-      <li><strong>Only one round at a time:</strong> You must stop before starting a new game.</li>
+      <li>🟢 <strong>Unique answer:</strong> 10 points</li>
+      <li>🟡 <strong>Matching answer:</strong> 5 points</li>
+      <li>🔴 <strong>No answer:</strong> 0 points</li>
+      <li>🌟 <strong>Alliteration bonus:</strong> +1 per matching starting letter (up to 3)<br> Example: “Sexy Slippery Snakes” = 10 + 3 = <strong>13 points</strong></li>
     </ul>
-  </details>
+    <p><strong>Other Rules:</strong></p>
+    <ul>
+      <li>Group voting breaks ties or disputed answers</li>
+      <li>Only one game can run at a time</li>
+      <li>No Googling unless agreed by all players</li>
+    </ul>
+  </div>
+</details>
 
   <script src="script.js"></script>
 </body>
