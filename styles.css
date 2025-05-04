@@ -135,4 +135,43 @@
     font-size: 1.1rem;
     cursor: pointer;
   }
+
+  .bg-logos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  }
+
+  .bg-logo {
+    position: absolute;
+    width: 120px;
+    opacity: 0.08;
+    transform: rotate(var(--angle));
+    animation: pulseGlow 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px hotpink);
+    z-index: 0;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      transform: scale(1) rotate(var(--angle));
+      filter: drop-shadow(0 0 10px hotpink);
+    }
+    50% {
+      transform: scale(1.1) rotate(var(--angle));
+      filter: drop-shadow(0 0 20px deeppink);
+    }
+  }
+
+  /* Game UI elements appear above background logos */
+  #logo, .tagline, .controls, .gameplay, .rules, h1, p, button {
+    position: relative;
+    z-index: 1;
+  }
+
 </style>
