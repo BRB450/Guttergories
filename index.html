@@ -63,6 +63,42 @@
     </ul>
   </div>
 </details>
+  .bg-logos {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-logo {
+  position: absolute;
+  width: 150px;
+  opacity: 0.15;
+  transform: rotate(var(--angle));
+  animation: pulseGlow 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px hotpink);
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1) rotate(var(--angle));
+    filter: drop-shadow(0 0 10px hotpink);
+  }
+  50% {
+    transform: scale(1.05) rotate(var(--angle));
+    filter: drop-shadow(0 0 25px deeppink);
+  }
+}
+
+/* Make sure game elements appear ABOVE the logos */
+#logo, .tagline, .controls, .gameplay, .rules {
+  position: relative;
+  z-index: 1;
+}
 
   <script src="script.js"></script>
 </body>
