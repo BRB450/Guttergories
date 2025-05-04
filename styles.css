@@ -1,138 +1,40 @@
-<style>
-  :root {
-    --bg-color: #fff;
-    --text-color: #000;
-    --accent-color: #ff4f9f;
-    --button-bg: var(--accent-color);
-    --button-text: #fff;
-  }
+<head>
+  <style>
+    .bg-logos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .bg-logo {
+      position: absolute;
+      width: 150px;
+      opacity: 0.15;
+      transform: rotate(var(--angle));
+      animation: pulseGlow 3s infinite ease-in-out;
+      filter: drop-shadow(0 0 10px hotpink);
+      z-index: 0;
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        transform: scale(1) rotate(var(--angle));
+        filter: drop-shadow(0 0 10px hotpink);
+      }
+      50% {
+        transform: scale(1.05) rotate(var(--angle));
+        filter: drop-shadow(0 0 25px deeppink);
+      }
+    }
 
-  body.dark {
-    --bg-color: #111;
-    --text-color: #fff;
-    --accent-color: #ff6fbf;
-  }
+    /* Make sure game elements appear ABOVE the logos */
+    #logo, .tagline, .controls, .gameplay, .rules {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
 
-  body {
-    margin: 0;
-    padding: 30px;
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    transition: all 0.3s ease;
-  }
-
-  h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    margin-bottom: 0.25em;
-    color: var(--accent-color);
-  }
-
-  .tagline {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-  }
-
-  .letter-box {
-    font-size: 8rem;
-    font-weight: bold;
-    border: 6px solid var(--accent-color);
-    padding: 30px 60px;
-    border-radius: 12px;
-    background-color: var(--bg-color);
-    box-shadow: 0 0 25px rgba(255, 0, 100, 0.3);
-    margin: 30px 0;
-  }
-
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 30px;
-  }
-
-  .controls input {
-    padding: 5px 10px;
-    width: 60px;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    text-align: center;
-  }
-
-  .controls button {
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .controls button:hover {
-    background-color: #222;
-    color: white;
-  }
-
-  .mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-  }
-
-  .timer {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-
-  #categoryList {
-    max-width: 600px;
-    width: 100%;
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-
-  #categoryList li {
-    padding: 10px 0;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #ccc;
-    opacity: 0;
-    animation: fadeIn 0.3s ease-in forwards;
-    animation-delay: calc(var(--i) * 0.05s);
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  details.rules {
-    max-width: 600px;
-    margin-top: 30px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f0f0f0;
-  }
-
-  body.dark details.rules {
-    background-color: #222;
-    border-color: #666;
-    color: #fff;
-  }
-
-  details.rules summary {
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-</style>
