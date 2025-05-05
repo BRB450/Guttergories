@@ -150,7 +150,7 @@
   .bg-logo {
     position: absolute;
     width: 120px;
-    opacity: 0.50;
+    opacity: 0.65;
     transform: rotate(var(--angle));
     animation: pulseGlow 3s infinite ease-in-out;
     filter: drop-shadow(0 0 10px hotpink);
